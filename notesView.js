@@ -5,10 +5,9 @@ class NotesView{
         this.mainContainerEl = document.querySelector('#main-container');
         // Event listners
         document.querySelector('#note-button').addEventListener('click', () => {
-        const newNote = document.querySelector('#note-button').value;
+        const newNote = document.querySelector('#user-input').value;
         this.addNewNote(newNote);
-
-    });
+        });
     };
 
     displayNotes(){
