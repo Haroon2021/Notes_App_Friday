@@ -1,4 +1,4 @@
-const NotesModel = require('./notesModel')
+const NotesModel = require('./notesModel');
 
 describe('NotesModel', () => {
   it('Should start with an empty array', () => {
@@ -21,4 +21,8 @@ describe('NotesModel', () => {
 
     expect(model.getNotes()).toEqual([]);
   });
+
+  
+
+
 });
