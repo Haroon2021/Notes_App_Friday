@@ -35,4 +35,20 @@ describe('NotesView', () => {
     expect(document.querySelectorAll('div.note')[0].innerText).toEqual('My new amazing test note');
 
     });
+
+    //Note the test below is trying to mimic how the user would put the input in one at a time as opposed to how the notes model currently works on the backensd and is able to take in multiple notes
+    it('should display notes', () => {
+        document.body.innerHTML = fs.readFileSync('./index.html');
+        const notesmodel = new NotesModel;
+        const notesView = new NotesView(notesmodel);
+    
+        notesmodel.addNote('Buy bread');
+        notesView.displayNotes();
+
+        notesmodel.addNote('Buy sugar');
+        
+        notesView.displayNotes();
+    
+        expect(document.querySelectorAll('div.note').length).toEqual(2);
+        });
 });
